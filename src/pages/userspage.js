@@ -73,7 +73,7 @@ class UsersPage extends React.Component {
                 return (
                   <tr>
                     <td>{users.id}</td>
-                    <td>{users.lastname}</td>
+
                     <td>{users.email}</td>
                     <td>{users.roles}</td>
                   </tr>
