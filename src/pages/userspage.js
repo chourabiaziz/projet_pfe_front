@@ -17,10 +17,10 @@ class UsersPage extends React.Component {
       redirect: "follow",
     };
 
-    fetch("https://localhost:8000/api/v1/users/list", requestOptions)
+    fetch("https://127.0.0.1:8000/apip/users", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        this.setState({ users: result, isLoading: false });
+        this.setState({ users: result["hydra:member"], isLoading: false });
       })
       .catch((error) => console.log("error", error));
   }
@@ -47,18 +47,18 @@ class UsersPage extends React.Component {
                 <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Phone</th>
+                <th>role</th>
               </tr>
             </thead>
 
             <tbody>
-              {this.state.users.map((u) => {
+              {this.state.users.map((users) => {
                 return (
                   <tr>
-                    <td>{u.id}</td>
-                    <td>{u.designation}</td>
-                    <td>{u.quantite}</td>
-                    <td>{u.prixHt}</td>
+                    <td>{users.id}</td>
+                    <td>{users.lastname}</td>
+                    <td>{users.email}</td>
+                    <td>{users.roles}</td>
                   </tr>
                 );
               })}
