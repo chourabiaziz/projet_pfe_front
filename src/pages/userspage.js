@@ -8,6 +8,7 @@ class UsersPage extends React.Component {
     this.state = {
       users: [],
       isLoading: true,
+      total: null,
     };
   }
 
@@ -15,13 +16,29 @@ class UsersPage extends React.Component {
     var requestOptions = {
       method: "GET",
       redirect: "follow",
+      Headers: {
+        "content-type": "application/json",
+        Accept: "application/json",
+      },
     };
 
-    fetch("https://127.0.0.1:8000/apip/users", requestOptions)
+    fetch("https://127.0.0.1:8000/api/users", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        this.setState({ users: result["hydra:member"], isLoading: false });
+        this.setState({
+          users: result["hydra:member"],
+          isLoading: false,
+        });
+      });
+    fetch("https://127.0.0.1:8000/api/users", requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        this.setState({
+          total: result["hydra:totalItems"],
+          isLoading: false,
+        });
       })
+
       .catch((error) => console.log("error", error));
   }
 
@@ -62,6 +79,7 @@ class UsersPage extends React.Component {
                   </tr>
                 );
               })}
+              <td>total users is {this.state.total}</td>
             </tbody>
           </table>
         </div>

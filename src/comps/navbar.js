@@ -31,6 +31,9 @@ class Navbar extends React.Component {
             <Link class="nav-item nav-link active" to="/users">
               Users{" "}
             </Link>
+            <Link class="nav-item nav-link active" to="/login">
+              login{" "}
+            </Link>
           </div>
         </div>
       </nav>

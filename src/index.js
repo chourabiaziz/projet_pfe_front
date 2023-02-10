@@ -6,22 +6,23 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/homepage";
 import UsersPage from "./pages/userspage";
+import Login from "./pages/login";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
-<<<<<<< HEAD
     errorElement: <h1>404 not found ya 3amii</h1>,
-=======
-    errorElement: <h1>404 not found ya thoura</h1>,
->>>>>>> 092835dab1b725a3a0f8085beced2c6725dc5089
   },
   {
     path: "/users",
     element: <UsersPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
