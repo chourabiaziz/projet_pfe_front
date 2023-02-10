@@ -13,7 +13,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+<<<<<<< HEAD
     errorElement: <h1>404 not found ya 3amii</h1>,
+=======
+    errorElement: <h1>404 not found ya thoura</h1>,
+>>>>>>> 092835dab1b725a3a0f8085beced2c6725dc5089
   },
   {
     path: "/users",
