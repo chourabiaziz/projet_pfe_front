@@ -2,7 +2,6 @@ import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
 
-<<<<<<< HEAD
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -27,18 +26,6 @@ class App extends React.Component {
       </div>
     );
   }
-=======
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello wOrld</p>
-        <h1>Taher Commit</h1>
-      </header>
-    </div>
-  );
->>>>>>> 54cb3266c5ecf59292433f7a20056521f93859a9
 }
 
 export default App;
