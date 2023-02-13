@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../comps/footer";
 import Navbar from "../comps/navbar";
 
 class HomePage extends React.Component {
@@ -12,7 +13,7 @@ class HomePage extends React.Component {
     return (
       <div>
         <Navbar />
-        content....
+        <Footer />
       </div>
     );
   }

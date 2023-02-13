@@ -2,20 +2,24 @@ import React from "react";
 import axios from "axios";
 import Navbar from "../comps/navbar";
 
-class Login extends React.Component {
+class CreateNewUser extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
       password: "",
+      token: [],
     };
   }
 
-  userlogin() {
+  createUser() {
     axios
       .post("https://127.0.0.1:8000/api/users", {
         email: this.state.email,
         password: this.state.password,
+        nom: this.state.nom,
+        prenom: this.state.prenom,
+        telephone: this.state.telephone,
       })
       .then(function (response) {
         console.log(response);
@@ -35,11 +39,44 @@ class Login extends React.Component {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            this.userlogin();
+            this.createUser();
           }}
         >
           <div className="card">
             <div className="card-body">
+              <div className="mb-3">
+                <label>nom</label>
+                <input
+                  type={"text"}
+                  className="form-control"
+                  value={this.state.nom}
+                  onChange={(event) => {
+                    this.setState({ nom: event.target.value });
+                  }}
+                />
+              </div>
+              <div className="mb-3">
+                <label>prenom</label>
+                <input
+                  type={"text"}
+                  className="form-control"
+                  value={this.state.prenom}
+                  onChange={(event) => {
+                    this.setState({ prenom: event.target.value });
+                  }}
+                />
+              </div>
+              <div className="mb-3">
+                <label>telephone</label>
+                <input
+                  type={"int"}
+                  className="form-control"
+                  value={this.state.telephone}
+                  onChange={(event) => {
+                    this.setState({ telephone: event.target.value });
+                  }}
+                />
+              </div>
               <div className="mb-3">
                 <label>Email</label>
                 <input
@@ -64,7 +101,7 @@ class Login extends React.Component {
               </div>
 
               <button className="btn btn-primary" type="submit">
-                login
+                Create account
               </button>
             </div>
           </div>
@@ -74,4 +111,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default CreateNewUser;

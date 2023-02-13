@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import LoginForm from "./pages/loginform";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -10,6 +11,7 @@ import Login from "./pages/login";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import CreateNewUser from "./pages/createuser";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
   {
     path: "/users",
     element: <UsersPage />,
+  },
+  {
+    path: "/loginform",
+    element: <LoginForm />,
+  },
+  {
+    path: "/create-account",
+    element: <CreateNewUser />,
   },
   {
     path: "/login",

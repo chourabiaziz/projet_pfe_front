@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../comps/navbar";
+import Footer from "../comps/footer";
 
 class UsersPage extends React.Component {
   constructor(props) {
@@ -73,7 +74,7 @@ class UsersPage extends React.Component {
                 return (
                   <tr>
                     <td>{users.id}</td>
-
+                    <td>{users.nom}</td>
                     <td>{users.email}</td>
                     <td>{users.roles}</td>
                   </tr>
@@ -83,6 +84,7 @@ class UsersPage extends React.Component {
             </tbody>
           </table>
         </div>
+        <Footer />
       </div>
     );
   }
